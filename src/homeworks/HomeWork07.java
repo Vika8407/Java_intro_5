@@ -129,10 +129,11 @@ public class HomeWork07 {
             [Black Widow, Captain America, Hulk, Iron Man]
             true
          */
-        ArrayList<String> characters = new ArrayList<>(Arrays.asList( "Hulk", "Black Widow", "Captain America", "Iron Man"));
-        System.out.println(characters);
-        System.out.println(characters.contains("Hulk") && characters.contains("Iron Men"));
+        ArrayList<String> superHeroes = new ArrayList<>(Arrays.asList("Hulk", "Black Widow",
+                "Captain America", "Iron Man"));
 
+        ArrayList<String> someHeroes = new ArrayList<>(Arrays.asList("Hulk" , "Iron Man"));
+        System.out.println(superHeroes.containsAll(someHeroes));
 
         System.out.println("\t\n ============ TASK 7 ============\n");
         /*
