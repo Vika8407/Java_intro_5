@@ -9,10 +9,12 @@ public class Project05 {
     public static void main(String[] args) {
 
         System.out.println("\t\n ============ TASK 1 ============\n");
+
         int[] digits = {10, 7, 7, 10, -3, 10, -3 };
         findGreatestAndSmallestWithSort(digits);
 
         System.out.println("\t\n ============ TASK 2 ============\n");
+
 
         int[] numbers ={10, 7, 7, 10, -3, 10, -3};
         findGreatestAndSmallest(numbers);
@@ -25,6 +27,7 @@ public class Project05 {
         findSecondGreatestAndSmallest(numbers);
 
         System.out.println("\t\n ============ TASK 5 ============\n");
+
         String[] str = {"foo", "bar", "Foo", "bar", "6", "abc", "6", "xyz"};
         findDuplicatedElementsInAnArray(str);
 
@@ -34,6 +37,16 @@ public class Project05 {
         findMostRepeatedElementInAnArray(strings);
     }
                           //------ Task 1 -----//
+     /*
+         Write a method that takes an int array that has at least one element. Find
+the greatest and smallest elements from the array and print them.
+Complete task using sort() method.
+Test data:
+[10, 7, 7, 10, -3, 10, -3]
+Expected output:
+Smallest = -3
+Greatest = 10
+         */
        public static void findGreatestAndSmallestWithSort(int[] numbers){
 
            int[] digits = {10, 7, 7, 10, -3, 10, -3 };
@@ -44,6 +57,17 @@ public class Project05 {
        }
 
                          //------ Task 2 -----//
+
+    /*
+        Write a method that takes an int array that has at least one element. Find
+the greatest and smallest elements from the array and print them. DO NOT
+sort the array and complete task without sorting.
+Test data:
+[10, 7, 7, 10 -3, 10, -3]
+Expected output:
+Smallest = -3
+Greatest = 10
+         */
              public static void findGreatestAndSmallest(int[] numbers) {
                  int greatest = Integer.MIN_VALUE;
                  int smallest = Integer.MAX_VALUE;
@@ -58,6 +82,17 @@ public class Project05 {
              }
 
                           //-----Task 3 ------//
+
+    /*
+        Write a method that takes an int array that has at least one element. Find
+the second greatest and second smallest elements from the array and print
+them. Complete task using sort() method.
+Test data:
+[10, 5, 6, 7, 8, 5, 15, 15]
+Expected output:
+Second Smallest = 6
+Second Greatest = 10
+         */
      public static void findSecondGreatestAndSmallestWithSort( int[] numbers) {
 
          int countSecondSmallest = Integer.MAX_VALUE;
@@ -80,6 +115,18 @@ public class Project05 {
      }
 
                              //-----Task 4 -----//
+
+    /*
+       TASK-4 - findSecondGreatestAndSmallest() method
+Write a method that takes an int array that has at least one element. Find
+the second greatest and second smallest elements from the array and print
+them. DO NOT sort the array and complete task without sorting.
+Test data:
+[10, 5, 6, 7, 8, 5, 15, 15]
+Expected output:
+Second Smallest = 6
+Second Greatest = 10
+        */
             public static int findGreatest(int[] numbers) {
                 int greatest = Integer.MIN_VALUE;
 
@@ -118,6 +165,21 @@ public class Project05 {
             }
 
                             //----- Task 5-----//
+
+
+
+        /*
+        ASK-5 - findDuplicatedElementsInAnArray() method
+Write a method that takes a String array. Find all duplicated elements and
+print them.
+NOTE: It is case-sensitive!
+Test data:
+[“foo”, “bar”, “Foo”, “bar”, “6”, “abc”, “6”, “xyz”]
+Expected output:
+bar
+6
+         */
+
           public static void findDuplicatedElementsInAnArray(String[] str){
 
               for (int i = 0; i <  str.length; i++) {
@@ -132,6 +194,15 @@ public class Project05 {
 
 
                            //------ Task 6-----//
+
+    /*
+       Write a method that takes a String array. Find the most repeated element
+and print it.
+Test data:
+[“pen”, “eraser”, “pencil”, “pen”, “123”, “abc”, “pen”, “eraser”]
+Expected output:
+pen
+        */
          public static void findMostRepeatedElementInAnArray(String[] string){
              int counter = 0;
              int  mostRepited = 0;
