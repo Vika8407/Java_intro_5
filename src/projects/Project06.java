@@ -11,6 +11,7 @@ public class Project06 {
         System.out.println("\n--------- Task 1 ----------\n");
 
         String str = "  abc";
+        //System.out.println(countMultipleWords(str));
 
         System.out.println("\n--------- Task 2 ----------\n");
 

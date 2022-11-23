@@ -36,7 +36,7 @@ public class HomeWork08 {
         System.out.println("\n--------- Task 6 ----------\n");
 
         String email = "abc@gmail.com";
-        System.out.println(returnEmail(email));
+        System.out.println(isEmailFormatValid(email));
     }
 
                /*
@@ -160,6 +160,7 @@ public class HomeWork08 {
            */
     public static boolean isDateFormatValid(String dateOfBirth){
         return(Pattern.matches("[\\d]{2,}[/]\\d]{2,}[/][\\d]{4,}",dateOfBirth));
+        // recap way return (Pattern.matches("[0][1-9]|[1][0-2])\/([0][1-9]|[12][0-9]|[3][01])\/(19[0-9]{2}|20[01][0-9]|202[0-2])",dateOfBirth);
     }
                /*
            Task-6
@@ -188,8 +189,8 @@ public class HomeWork08 {
 
            */
 
-            public static boolean returnEmail (String email){
-                return (Pattern.matches("[\\w]{2,}[@][\\w]{2,}\\.[\\w]{2,}",email));
+            public static boolean isEmailFormatValid (String email){
+                return (Pattern.matches("[\\w.#$-]{2,}[@][\\w.]{2,}\\.[\\w]{2,}",email));
                }
 
 
