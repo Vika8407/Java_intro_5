@@ -56,12 +56,10 @@ Expected Result 3: [0, 1, 1, 2, 3, 5, 8]
 
     public static int[] fibonacciSeries1(int num){
         int[] arr = new int[num];
-        int num1 = 1; int num2 = 0; int num3 = 0;
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = num1;
-            num3 = num2 + num1;
-            num2 = num1;
-            num1 = num3;
+        arr[0] = 0;
+        arr[1] = 1;
+        for (int i = 0; i < num; i++) {
+            arr[i] = arr[i -1] + arr[i - 2];
         }
         return arr;
     }
@@ -84,9 +82,19 @@ Expected Result 3: 13
 */
 
     public static int fibonacciSeries2(int num){
-        int[] arr = fibonacciSeries1(num);
-        return arr[arr.length-1];
+        if( num <= 0){
+            return  0;
+        } else if (num == 1) {
+           return 1;
+        }
 
+        int num1 = 0, num2 = 1, num3 = 0;
+        for (int i = 2; i <= num ; i++) {
+            num3 = num2 + num1;
+            num1 = num2;
+            num2 = num3;
+        }
+         return num2;
     }
     /*
 Task-3
@@ -108,6 +116,8 @@ Test Data 4: [8, 9], [9, 8, 9]
 Expected Result 4: []
 
 
+     */
+
     public static int[] findUniques(int[] num1, int[] num2){
         Set<Integer> unique = new HashSet<>();
 
@@ -118,10 +128,15 @@ Expected Result 4: []
             unique.add(i);
         }
 
-        return unique;
+        int[] newArr = new int[unique.size()];
+        int i = 0;
+        for (int i2 : unique) {
+            newArr[i++] = i2;
+        }
+       return newArr;
     }
 
-     */
+
 
 
     /*
@@ -143,9 +158,9 @@ Expected Result 4: true
 */
 
     public static  boolean isPowerOf3(int num){
-        if(num == 1 || num % 3 == 0);
-        return true;
+        return num == 1 || num % 3 == 0;
     }
+    
 
     /*
 Task-5
@@ -169,18 +184,28 @@ Expected Result 4: 3
 
      */
 
-    public static int firstDuplicate(int[] arr){
+   /* public static int firstDuplicate(int[] arr){
         HashSet<Integer> set = new HashSet<>();
-           int min = -1;
-        for (int i = arr.length - 1; i >= 0; i--) {
-            if (set.contains(arr[i]))
-                min = i;
-            else set.add(arr[i]);
+        for (int i = 0; i < arr.length; i++){
+            if (set.contains(arr[i])) {
+                return arr[i];
+            }
+            set.add(arr[i]);
         }
-        if (min != -1)
-            System.out.println("The first duplicate is " + arr[min]);
-        else System.out.println("There are no duplicates elements");
-        return min;
+       return  -1;
+    }
+
+    */
+
+    public static int firstDuplicate( int[] num){
+        Set<Integer> set = new HashSet<>();
+        for (int i : num) {
+            if (set.contains(i)){
+                return i;
+            }
+            set.add(i);
+        }
+        return -1;
     }
 
 
